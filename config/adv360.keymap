@@ -54,11 +54,11 @@
       bindings = <&kp LPAR>, <&kp RPAR>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
-    mm_brkt: mod_morph_brackets {
+    mm_bkt: mod_morph_brackets {
       compatible = "zmk,behavior-mod-morph";
       label = "BRACKETS";
       #binding-cells = <0>;
-      bindings = <&kp LBRKT>, <&kp RBRKT>;
+      bindings = <&kp LBKT>, <&kp RBKT>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
     mm_para: mod_morph_paragraph {
@@ -109,7 +109,7 @@
       bindings = <
         ___       &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6                                       &kp F7  &kp F8    &kp F9    &kp F10   &kp F11   &kp F12     ___
         ___       &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT   xxx                                          xxx     &kp EQUAL &kp N7    &kp N8    &kp N9    &kp MINUS   ___
-        ___       &kp BSLH  &kp PIPE  &mm_brc   &mm_par   &mm_bkt     xxx       ___    ___    ___    ___           xxx     &kp STAR  &kp N4    &kp N5    &kp N6    &kp mm_ineq &mm_sdq
+        ___       &kp BSLH  &kp PIPE  &mm_brc   &mm_par   &mm_bkt     xxx       ___    ___    ___    ___           xxx     &kp STAR  &kp N4    &kp N5    &kp N6    &mm_ineq    &mm_sdq
         ___       &kp CARET &kp AMPS  &kp RBRC  &kp RPAR  &kp RBKT                     ___    ___                          &kp N0    &kp N1    &kp N2    &kp N3    &kp GT      ___
         ___       ___       ___       ___       ___                      ___    ___    ___    ___    ___    ___                      ___       ___       ___       ___         ___
       >;
@@ -118,7 +118,7 @@
       bindings = <
         ___       &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6                                       &kp F7  &kp F8    &kp F9    &kp F10   &kp F11   &kp F12     ___
         ___       &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT   xxx                                          xxx     &kp EQUAL &kp N7    &kp N8    &kp N9    &kp MINUS   ___
-        ___       &kp BSLH  &kp PIPE  &mm_brc   &mm_par   &mm_bkt     xxx       ___    ___    ___    ___           xxx     &kp STAR  &kp N4    &kp N5    &kp N6    &kp mm_ineq &mm_sdq
+        ___       &kp BSLH  &kp PIPE  &mm_brc   &mm_par   &mm_bkt     xxx       ___    ___    ___    ___           xxx     &kp STAR  &kp N4    &kp N5    &kp N6    &mm_ineq    &mm_sdq
         ___       &kp CARET &kp AMPS  &kp RBRC  &kp RPAR  &kp RBKT                     ___    ___                          &kp N0    &kp N1    &kp N2    &kp N3    &kp GT      ___
         ___       ___       ___       ___       ___                      ___    ___    ___    ___    ___    ___                      ___       ___       ___       ___         ___
       >;
