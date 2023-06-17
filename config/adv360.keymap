@@ -9,6 +9,19 @@
 #define BRWS_BCK &kp LA(LEFT_ARROW)
 #define BRWS_FWD &kp LA(RIGHT_ARROW)
 
+// Dev commands (from intelliJ keymap)
+#define DEBUG &kp LA(LS(F9))
+#define RUN &kp LA(LS(F10))
+#define TOG_BKPT &kp LC(F8)
+#define STEP_INTO &kp F7
+#define STEP_OVER &kp F8
+#define STEP_OUT &kp LS(F8)
+#define GO_DEF &kp LC(B)
+#define GO_SUP &kp LC(U)
+#define GO_FILE &kp LC(LS(N))
+#define SW_HD_SRC &kp F10
+#define RS_FMT &kp LC(LA(LS(F)))
+
 #define COLEMAK 0
 #define EXTD 1
 #define SYMB 2
@@ -27,7 +40,7 @@
         label = "HOMEROW_MODS";
         #binding-cells = <2>;
         tapping-term-ms = <200>;
-        quick_tap_ms = <175>;
+        quick_tap_ms = <150>;
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
     };
@@ -47,6 +60,7 @@
       bindings = <&kp LBRC>, <&kp RBRC>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
+    
     mm_par: mod_morph_parens {
       compatible = "zmk,behavior-mod-morph";
       label = "PARENTHESES";
@@ -54,6 +68,7 @@
       bindings = <&kp LPAR>, <&kp RPAR>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
+    
     mm_bkt: mod_morph_brackets {
       compatible = "zmk,behavior-mod-morph";
       label = "BRACKETS";
@@ -61,6 +76,7 @@
       bindings = <&kp LBKT>, <&kp RBKT>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
+    
     mm_para: mod_morph_paragraph {
       compatible = "zmk,behavior-mod-morph";
       label = "PARAGRAPH";
@@ -68,6 +84,7 @@
       bindings = <&kp LC(UP)>, <&kp LC(DOWN)>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
+    
     mm_ineq: mod_morph_inequalities {
       compatible = "zmk,behavior-mod-morph";
       label = "INEQUALITIES";
@@ -75,6 +92,7 @@
       bindings = <&kp LT>, <&kp GT>;
       mods = <(MOD_LSFT|MOD_RSFT)>;
     };
+    
     mm_pgnav: mod_morph_page_navigation {
       compatible = "zmk,behavior-mod-morph";
       label = "PAGE_NAVIGATION";
@@ -89,11 +107,11 @@
 
     colemak {
       bindings = <
-        &kp GRAVE &kp N1     &kp N2     &kp N3      &kp N4      &kp N5 &tog KEYPAD                                                      &mo MOD &kp N6  &kp N7      &kp N8      &kp N9     &kp N0     &kp MINUS
+        &kp GRAVE &kp N1     &kp N2     &kp N3      &kp N4      &kp N5 &mo KEYPAD                                                       &mo MOD &kp N6  &kp N7      &kp N8      &kp N9     &kp N0     &kp MINUS
         &kp TAB   &kp Q      &kp W      &kp F       &kp P       &kp B  xxx                                                              xxx     &kp J   &kp L       &kp U       &kp Y      &kp SEMI   &kp BSLH
         &kp ESC   &hm LGUI A &hm LALT R &hm LSHFT S &hm LCTRL T &kp G  xxx             &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           xxx     &kp M   &hm RCTRL N &hm RSHFT E &hm RALT I &hm RGUI O &kp SQT
-        &mo EXTD  &kp Z      &kp X      &kp C       &kp D       &kp V                            &kp HOME &kp PG_UP                             &kp K   &kp H       &kp COMMA   &kp DOT    &kp FSLH   &mo EXTD
-        &mo MEDIA &kp GRAVE  &kp CAPS   &kp LEFT    &kp RIGHT                  &mo EXTD &mo SYMB &kp BSPC &kp DEL   &kp ENTER &kp SPACE                 &kp UP      &kp DOWN    &kp LBKT   &kp RBKT   &mo MEDIA
+        &mo SYMB  &kp Z      &kp X      &kp C       &kp D       &kp V                            &kp HOME &kp END                               &kp K   &kp H       &kp COMMA   &kp DOT    &kp FSLH   &mo DEV
+        &mo MEDIA &kp GRAVE  &kp CAPS   &kp LEFT    &kp RIGHT                  &kp BSPC &mo EXTD &kp BSPC &kp DEL   &kp ENTER &kp SPACE                 &kp UP      &kp DOWN    &kp LBKT   &kp RBKT   &mo MEDIA
       >;
     };
     extend {
@@ -117,9 +135,9 @@
     dev {
       bindings = <
         ___       &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6                                       &kp F7  &kp F8    &kp F9    &kp F10   &kp F11   &kp F12     ___
-        ___       &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT   xxx                                          xxx     &kp EQUAL &kp N7    &kp N8    &kp N9    &kp MINUS   ___
-        ___       &kp BSLH  &kp PIPE  &mm_brc   &mm_par   &mm_bkt     xxx       ___    ___    ___    ___           xxx     &kp STAR  &kp N4    &kp N5    &kp N6    &mm_ineq    &mm_sdq
-        ___       &kp CARET &kp AMPS  &kp RBRC  &kp RPAR  &kp RBKT                     ___    ___                          &kp N0    &kp N1    &kp N2    &kp N3    &kp GT      ___
+        ___        ___       ___       ___      RS_FMT    ___         xxx                                          xxx     STEP_INTO STEP_OVER STEP_OUT  ___       ___         ___
+        ___       GO_SUP    GO_FILE   GO_DEF    SW_HD_SRC ___         xxx       ___    ___    ___    ___           xxx     TOG_BKPT  DEBUG     RUN       GO_FILE   GO_SUP      ___   
+        ___       ___       ___       ___       ___       ___                          ___    ___                          ___       ___       ___       ___       ___         ___
         ___       ___       ___       ___       ___                      ___    ___    ___    ___    ___    ___                      ___       ___       ___       ___         ___
       >;
     };
