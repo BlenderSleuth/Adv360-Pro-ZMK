@@ -107,11 +107,13 @@
 
     colemak {
       bindings = <
-        &kp GRAVE &kp N1     &kp N2     &kp N3      &kp N4      &kp N5 &mo KEYPAD                                                       &mo MOD &kp N6  &kp N7      &kp N8      &kp N9     &kp N0     &kp MINUS
+        &kp EQUAL &kp N1     &kp N2     &kp N3      &kp N4      &kp N5 &mo KEYPAD                                                       &mo MOD &kp N6  &kp N7      &kp N8      &kp N9     &kp N0     &kp MINUS
         &kp TAB   &kp Q      &kp W      &kp F       &kp P       &kp B  xxx                                                              xxx     &kp J   &kp L       &kp U       &kp Y      &kp SEMI   &kp BSLH
-        &kp ESC   &hm LGUI A &hm LALT R &hm LSHFT S &hm LCTRL T &kp G  xxx             &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           xxx     &kp M   &hm RCTRL N &hm RSHFT E &hm RALT I &hm RGUI O &kp SQT
+     // Home row mods
+     // &kp ESC   &hm LGUI A &hm LALT R &hm LSHFT S &hm LCTRL T &kp G  xxx             &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           xxx     &kp M   &hm RCTRL N &hm RSHFT E &hm RALT I &hm RGUI O &kp SQT
+        &kp ESC   &kp A      &kp R      &kp S       &kp T       &kp G  xxx             &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           xxx     &kp M   &kp N       &kp E       &kp I      &kp O      &kp SQT
         &mo SYMB  &kp Z      &kp X      &kp C       &kp D       &kp V                            &kp HOME &kp END                               &kp K   &kp H       &kp COMMA   &kp DOT    &kp FSLH   &mo DEV
-        &mo MEDIA &kp GRAVE  &kp CAPS   &kp LEFT    &kp RIGHT                  &kp BSPC &mo EXTD &kp BSPC &kp DEL   &kp ENTER &kp SPACE                 &kp UP      &kp DOWN    &kp LBKT   &kp RBKT   &mo MEDIA
+        &mo MEDIA &kp GRAVE  &kp CAPS   &kp LEFT    &kp RIGHT               &kp LSHIFT &mo EXTD  &kp BSPC &kp DEL   &kp ENTER &kp SPACE                 &kp UP      &kp DOWN    &kp LBKT   &kp RBKT   &mo MEDIA
       >;
     };
     extend {
