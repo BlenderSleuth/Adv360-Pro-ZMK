@@ -12,7 +12,7 @@
 // Dev commands (from Visual Studio keymap)
 #define BUILD &kp LC(LS(B))
 #define DEBUG &kp LA(F5)
-#define RUN &kp LS(F5)
+#define RUN &kp LC(F5)
 #define TOG_BKPT &kp F9
 #define STEP_INTO &kp F11
 #define STEP_OVER &kp F10
