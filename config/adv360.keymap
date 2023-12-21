@@ -20,7 +20,7 @@
 #define GO_DEF &kp F12
 #define GO_SUP &kp LA(HOME)
 #define GO_FILE &kp LC(LS(T))
-#define SW_HD_SRC &kp LC(O)
+#define SW_HD_SRC &kp LA(O)
 #define RS_FMT &kp LC(LA(ENTER))
 
 #define COLEMAK 0
@@ -54,6 +54,20 @@
         quick_tap_ms = <150>;
         flavor = "tap-preferred";
         bindings = <&kp>, <&kp>;
+    };
+
+    fmt_clean: fmt_clean {
+      compatible = "zmk,behavior-macro";
+      label = "format and clean";
+      #binding-cells = <0>;
+      bindings = <&macro_press &kp LC(E)>, <&macro_tap &kp C>, <&macro_release &kp LC(E)>;
+    };
+
+    cllps_def: cllps_def {
+      compatible = "zmk,behavior-macro";
+      label = "collapse to definitions";
+      #binding-cells = <0>;
+      bindings = <&macro_press &kp LC(M)>, <&macro_tap &kp O>, <&macro_release &kp LC(M)>;
     };
 
     mm_sdq: single_double_quote {
@@ -150,8 +164,8 @@
     dev {
       bindings = <
         ___       &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6                                       &kp F7  &kp F8    &kp F9    &kp F10   &kp F11   &kp F12     ___
-        ___       ___       ___       ___       RS_FMT    ___         xxx                                          xxx     STEP_INTO STEP_OVER STEP_OUT  ___       ___         ___
-        ___       GO_SUP    GO_FILE   GO_DEF    SW_HD_SRC ___         xxx       ___    ___    ___    ___           xxx     TOG_BKPT  DEBUG     RUN       BUILD     GO_SUP      ___   
+        ___       ___       ___       ___       &fmt_clean ___        xxx                                          xxx     STEP_INTO STEP_OVER STEP_OUT  ___       ___         ___
+        ___       ___       GO_SUP    GO_FILE   GO_DEF    SW_HD_SRC   xxx       ___    ___    ___    ___           xxx     TOG_BKPT  DEBUG     RUN       BUILD     &cllps_def  ___
         ___       ___       ___       ___       ___       ___                          ___    ___                          ___       ___       ___       ___       ___         ___
         ___       ___       ___       ___       ___                      ___    ___    ___    ___    ___    ___                      ___       ___       ___       ___         ___
       >;
