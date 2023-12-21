@@ -9,18 +9,19 @@
 #define BRWS_BCK &kp LA(LEFT_ARROW)
 #define BRWS_FWD &kp LA(RIGHT_ARROW)
 
-// Dev commands (from intelliJ keymap)
-#define DEBUG &kp LA(LS(F9))
-#define RUN &kp LA(LS(F10))
-#define TOG_BKPT &kp LC(F8)
-#define STEP_INTO &kp F7
-#define STEP_OVER &kp F8
-#define STEP_OUT &kp LS(F8)
-#define GO_DEF &kp LC(B)
-#define GO_SUP &kp LC(U)
-#define GO_FILE &kp LC(LS(N))
-#define SW_HD_SRC &kp F10
-#define RS_FMT &kp LC(LA(LS(F)))
+// Dev commands (from Visual Studio keymap)
+#define BUILD &kp LC(LS(B))
+#define DEBUG &kp LA(F5)
+#define RUN &kp LS(F5)
+#define TOG_BKPT &kp F9
+#define STEP_INTO &kp F11
+#define STEP_OVER &kp F10
+#define STEP_OUT &kp LS(F11)
+#define GO_DEF &kp F12
+#define GO_SUP &kp LA(HOME)
+#define GO_FILE &kp LC(LS(T))
+#define SW_HD_SRC &kp LC(O)
+#define RS_FMT &kp LC(LA(ENTER))
 
 #define COLEMAK 0
 #define EXTD 1
@@ -115,51 +116,53 @@
   keymap {
     compatible = "zmk,keymap";
 
+    // Home row mods
+    // &kp ESC   &hm LGUI A &hm LALT R &hm LSHFT S &hm LCTRL T &kp G  xxx             &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           xxx     &kp M   &hm RCTRL N &hm RSHFT E &hm RALT I &hm RGUI O &kp SQT
+
+
     colemak {
       bindings = <
-        &kp EQUAL &kp N1     &kp N2     &kp N3      &kp N4      &kp N5 &mo KEYPAD                                                       &mo MOD &kp N6  &kp N7      &kp N8      &kp N9     &kp N0     &kp MINUS
-        &kp TAB   &kp Q      &kp W      &kp F       &kp P       &kp B  xxx                                                              xxx     &kp J   &kp L       &kp U       &kp Y      &kp SEMI   &kp BSLH
-     // Home row mods
-     // &kp ESC   &hm LGUI A &hm LALT R &hm LSHFT S &hm LCTRL T &kp G  xxx             &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           xxx     &kp M   &hm RCTRL N &hm RSHFT E &hm RALT I &hm RGUI O &kp SQT
-        &kp ESC   &kp A      &kp R      &kp S       &kp T       &kp G  xxx             &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           xxx     &kp M   &kp N       &kp E       &kp I      &kp O      &kp SQT
-        &mo SYMB  &kp Z      &kp X      &kp C       &kp D       &kp V                            &kp HOME &kp END                               &kp K   &kp H       &kp COMMA   &kp DOT    &kp FSLH   &mo DEV
-        &mo MEDIA &kp GRAVE  &kp CAPS   &kp LEFT    &kp RIGHT               &kp LSHIFT &mo EXTD  &kp BSPC &kp DEL   &kp ENTER &kp SPACE                 &kp UP      &kp DOWN    &kp LBKT   &kp RBKT   &mo MEDIA
+        &kp EQUAL  &kp N1     &kp N2     &kp N3      &kp N4      &kp N5 &mo KEYPAD                                                       &mo MOD &kp N6  &kp N7      &kp N8      &kp N9     &kp N0     &kp MINUS
+        &kp TAB    &kp Q      &kp W      &kp F       &kp P       &kp B  xxx                                                              xxx     &kp J   &kp L       &kp U       &kp Y      &kp SEMI   &kp BSLH
+        &kp ESC    &kp A      &kp R      &kp S       &kp T       &kp G  xxx             &kp LCTRL &kp LALT &kp LGUI  &kp RCTRL           xxx     &kp M   &kp N       &kp E       &kp I      &kp O      &kp SQT
+        &mo DEV    &kp Z      &kp X      &kp C       &kp D       &kp V                            &kp HOME &kp END                               &kp K   &kp H       &kp COMMA   &kp DOT    &kp FSLH   &mo SYMB
+        &mo KEYPAD &kp GRAVE  &kp CAPS   &kp LEFT    &kp RIGHT               &kp LSHIFT &mo EXTD  &kp BSPC &kp DEL   &kp ENTER &kp SPACE                 &kp UP      &kp DOWN    &kp LBKT   &kp RBKT   &mo MEDIA
       >;
     };
     extend {
       bindings = <
-        ___       &kp F1    &kp F2       &kp F3     &kp F4    &kp F5        &kp F6                                           &kp F7    &kp F8    &kp F9    &kp F10   &kp F11    &kp F12  ___
-        ___       &kp ESC   &kp LC(LEFT) xxx        &kp HOME  &kp LC(RIGHT) xxx                                              xxx       &kp PG_UP xxx       &kp UP     xxx       xxx      ___
-        ___       xxx       xxx          &mm_para   xxx       &mm_pgnav     xxx           ___    ___    ___    ___           xxx       &kp PG_DN &kp LEFT  &kp DOWN   &kp RIGHT xxx      ___
-        ___       &kp LC(Z) &kp LC(X)    &kp LC(C)  &kp BSPC  &kp LC(V)                          ___    ___                            &kp END   xxx       xxx        xxx       xxx      ___
+        ___       &kp F1    &kp F2       &kp F3     &kp F4    &kp F5        &kp F6                                           &kp F7    &kp F8    &kp F9    &kp F10    &kp F11   &kp F12  ___
+        ___       &kp ESC   &kp LC(LEFT) xxx        &kp HOME  &kp LC(RIGHT) xxx                                              xxx       &kp PG_UP xxx       xxx        xxx       xxx      ___
+        ___       xxx       xxx          &kp LC(S)  xxx       &mm_pgnav     xxx           ___    ___    ___    ___           xxx       &kp LEFT  &kp DOWN  &kp UP     &kp RIGHT xxx      ___
+        ___       &kp LC(Z) &kp LC(X)    &kp LC(C)  &kp BSPC  &kp LC(V)                          ___    ___                            &kp PG_DN xxx       xxx        xxx       xxx      ___
         ___       xxx       xxx          xxx        xxx                            ___    ___    ___    ___    ___    ___                        xxx       xxx        xxx       xxx      ___
       >;
     };
     symbols {
       bindings = <
-        ___       &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6                                       &kp F7  &kp F8    &kp F9    &kp F10   &kp F11   &kp F12     ___
-        ___       &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT   xxx                                          xxx     &kp EQUAL &kp N7    &kp N8    &kp N9    &kp MINUS   ___
-        ___       &kp BSLH  &kp PIPE  &mm_brc   &mm_par   &mm_bkt     xxx       ___    ___    ___    ___           xxx     &kp STAR  &kp N4    &kp N5    &kp N6    &mm_ineq    &mm_sdq
-        ___       &kp CARET &kp AMPS  &kp RBRC  &kp RPAR  &kp RBKT                     ___    ___                          &kp N0    &kp N1    &kp N2    &kp N3    &kp GT      ___
-        ___       ___       ___       ___       ___                      ___    ___    ___    ___    ___    ___                      ___       ___       ___       ___         ___
+        ___       &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6                                       &kp F7  &kp F8    &kp F9    &kp F10    &kp F11   &kp F12    ___
+        &kp GRAVE &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT   xxx                                          xxx     xxx       xxx       xxx        xxx       xxx        ___
+        ___       &kp CARET &kp AMPS  &kp LBRC  &kp LPAR  &kp LBKT    xxx       ___    ___    ___    ___           xxx     &kp RBKT  &kp RPAR  &kp RBRC   xxx       &kp SEMI   ___
+        ___       &kp STAR  &kp UNDER &kp RBRC  &kp RPAR  &kp RBKT                     ___    ___                          xxx       &kp COMMA &kp DOT    &kp FSLH  &kp BSLH   ___
+        ___       ___       ___       ___       ___                      ___    ___    ___    ___    ___    ___                      ___       ___        ___       ___        ___
       >;
     };
     dev {
       bindings = <
         ___       &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6                                       &kp F7  &kp F8    &kp F9    &kp F10   &kp F11   &kp F12     ___
-        ___        ___       ___       ___      RS_FMT    ___         xxx                                          xxx     STEP_INTO STEP_OVER STEP_OUT  ___       ___         ___
-        ___       GO_SUP    GO_FILE   GO_DEF    SW_HD_SRC ___         xxx       ___    ___    ___    ___           xxx     TOG_BKPT  DEBUG     RUN       GO_FILE   GO_SUP      ___   
+        ___       ___       ___       ___       RS_FMT    ___         xxx                                          xxx     STEP_INTO STEP_OVER STEP_OUT  ___       ___         ___
+        ___       GO_SUP    GO_FILE   GO_DEF    SW_HD_SRC ___         xxx       ___    ___    ___    ___           xxx     TOG_BKPT  DEBUG     RUN       BUILD     GO_SUP      ___   
         ___       ___       ___       ___       ___       ___                          ___    ___                          ___       ___       ___       ___       ___         ___
         ___       ___       ___       ___       ___                      ___    ___    ___    ___    ___    ___                      ___       ___       ___       ___         ___
       >;
     };
     keypad {
       bindings = <
-        ___       ___       ___      ___      ___        ___    ___                                                              ___   ___    &kp KP_NUM &kp KP_EQUAL &kp KP_DIVIDE &kp KP_MULTIPLY ___
-        ___       ___       ___      ___      ___        ___    xxx                                                              xxx   ___    &kp KP_N7  &kp KP_N8    &kp KP_N9     &kp KP_MINUS    ___
-        ___       ___       ___      ___      ___        ___    xxx             ___       ___      ___       ___                 xxx   ___    &kp KP_N4  &kp KP_N5    &kp KP_N6     &kp KP_PLUS     ___
-        ___       ___       ___      ___      ___        ___                              ___      ___                                 ___    &kp KP_N1  &kp KP_N2    &kp KP_N3     &kp KP_ENTER    ___
-        ___       ___       ___      ___      ___                      ___      ___       ___      ___       ___       ___                    ___        ___          &kp KP_DOT    ___             ___
+        ___       ___       ___      ___      ___        ___    ___                                                              ___   ___    &kp KP_NUM &kp KP_DIVIDE &kp KP_MULTIPLY &kp KP_MINUS
+        ___       ___       ___      ___      ___        ___    xxx                                                              xxx   ___    &kp KP_N7  &kp KP_N8     &kp KP_N9       &kp KP_PLUS    ___
+        ___       ___       ___      ___      ___        ___    xxx             ___       ___      ___       ___                 xxx   ___    &kp KP_N4  &kp KP_N5     &kp KP_N6       &kp KP_PLUS    ___
+        ___       ___       ___      ___      ___        ___                              ___      ___                                 ___    &kp KP_N1  &kp KP_N2     &kp KP_N3       &kp KP_ENTER   ___
+        ___       ___       ___      ___      ___                      ___      ___       ___      ___       ___       ___                    &kp KP_N0  &kp KP_N0     &kp KP_DOT      &kp KP_ENTER   ___
       >;
     };
     media {
