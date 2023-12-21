@@ -155,8 +155,8 @@
     symbols {
       bindings = <
         ___       &kp F1    &kp F2    &kp F3    &kp F4    &kp F5      &kp F6                                       &kp F7  &kp F8    &kp F9    &kp F10    &kp F11   &kp F12    ___
-        &kp GRAVE &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT   xxx                                          xxx     xxx       xxx       xxx        xxx       xxx        ___
-        ___       &kp CARET &kp AMPS  &kp LBRC  &kp LPAR  &kp LBKT    xxx       ___    ___    ___    ___           xxx     &kp RBKT  &kp RPAR  &kp RBRC   xxx       &kp SEMI   ___
+        &kp GRAVE &kp EXCL  &kp AT    &kp HASH  &kp DLLR  &kp PRCNT   xxx                                          xxx     xxx       xxx       &kp MINUS  &kp EQUAL xxx        ___
+        ___       &kp CARET &kp AMPS  &kp LBRC  &kp LPAR  &kp LBKT    xxx       ___    ___    ___    ___           xxx     &kp RBKT  &kp RPAR  &kp RBRC   &kp SEMI  &kp SQT    ___
         ___       &kp STAR  &kp UNDER &kp RBRC  &kp RPAR  &kp RBKT                     ___    ___                          xxx       &kp COMMA &kp DOT    &kp FSLH  &kp BSLH   ___
         ___       ___       ___       ___       ___                      ___    ___    ___    ___    ___    ___                      ___       ___        ___       ___        ___
       >;
