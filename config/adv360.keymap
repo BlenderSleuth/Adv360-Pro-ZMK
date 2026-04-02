@@ -35,8 +35,9 @@
 #define EXTD 1
 #define DEV 2
 #define KEYPAD 3
-#define MEDIA 4
-#define MOD 5
+#define GAMING 4
+#define MEDIA 5
+#define MOD 6
 
 / {
     behaviors {
@@ -75,11 +76,11 @@
     enthium {
       display-name = "Enthium";
       bindings = <
-        xxx       &kp N1    &kp N2    &kp N3   &kp N4    &kp N5    &mo KEYPAD                                                &mo MOD &kp N6 &kp N7    &kp N8       &kp N9         &kp N0      xxx
-        &kp TAB   &kp Q     &kp Y     &kp O    &kp U     &kp EQUAL xxx                                                       xxx     &kp X  &kp L     &kp D        &kp P          &kp Z       xxx
+        &kp ESC   &kp N1    &kp N2    &kp N3   &kp N4    &kp N5    &mo KEYPAD                                                &mo MOD &kp N6 &kp N7    &kp N8       &kp N9         &kp N0      &kp BSPC
+        &kp TAB   &kp Q     &kp Y     &kp O    &kp U     &kp EQUAL &tog GAMING                                               xxx     &kp X  &kp L     &kp D        &kp P          &kp Z       xxx
         &kp B     &kp C     &kp I     &kp A    &kp E     &kp MINUS xxx           &kp LCTRL &kp LALT &kp LGUI &kp RCTRL       xxx     &kp K  &kp H     &kp T        &kp N          &kp S       &kp W
-        &kp ESC   &kp SQT   &kp COMMA &kp DOT  &kp FSLH  &kp SEMI                          &kp HOME &kp END                          &kp J  &kp M     &kp G        &kp F          &kp V       &mo DEV
-        &mo EXTD  &kp GRAVE &kp LBKT  &kp RBKT &kp BSLH               &kp SPACE &kp LSHIFT &kp BSPC &kp DEL  &kp ENTER &kp R                &kp PG_UP &msc SCRL_UP &msc SCRL_DOWN &kp PG_DN   &mo MEDIA
+        &kp ESC   &kp SQT   &kp COMMA &kp DOT  &kp SEMI  &kp FSLH                          &kp HOME &kp END                          &kp J  &kp M     &kp G        &kp F          &kp V       &mo DEV
+        &mo EXTD  &kp BSLH  &kp LPAR  &kp RPAR &kp PG_DN              &kp SPACE &kp LSHIFT &kp BSPC &kp DEL  &kp ENTER &kp R                &kp PG_UP &kp LBKT     &kp RBKT       &kp GRAVE   &mo MEDIA
       >;
     };
     extend {
@@ -108,6 +109,16 @@
         ___       ___       ___      ___      ___        ___    ___                                                              ___   ___    &kp KP_NUM &kp KP_DIVIDE &kp KP_MULTIPLY &kp KP_MINUS   ___
         ___       ___       ___      ___      ___        ___    xxx                                                              xxx   ___    &kp KP_N7  &kp KP_N8     &kp KP_N9       &kp KP_PLUS    ___
         ___       ___       ___      ___      ___        ___    xxx             ___       ___      ___       ___                 xxx   ___    &kp KP_N4  &kp KP_N5     &kp KP_N6       &kp KP_PLUS    ___
+        ___       ___       ___      ___      ___        ___                              ___      ___                                 ___    &kp KP_N1  &kp KP_N2     &kp KP_N3       &kp KP_ENTER   ___
+        ___       ___       ___      ___      ___                      ___      ___       ___      ___       ___       ___                    &kp KP_N0  &kp KP_N0     &kp KP_DOT      &kp KP_ENTER   ___
+      >;
+    };
+    gaming {
+      display-name = "Gaming";
+      bindings = <
+        ___       ___       ___      ___      ___        ___    ___                                                              ___   ___    &kp KP_NUM &kp KP_DIVIDE &kp KP_MULTIPLY &kp KP_MINUS   ___
+        ___       ___       ___      &kp W    ___        ___    ___                                                              xxx   ___    &kp KP_N7  &kp KP_N8     &kp KP_N9       &kp KP_PLUS    ___
+        ___       ___       &kp A    &kp S    &kp D      &kp F  xxx             ___       ___      ___       ___                 xxx   ___    &kp KP_N4  &kp KP_N5     &kp KP_N6       &kp KP_PLUS    ___
         ___       ___       ___      ___      ___        ___                              ___      ___                                 ___    &kp KP_N1  &kp KP_N2     &kp KP_N3       &kp KP_ENTER   ___
         ___       ___       ___      ___      ___                      ___      ___       ___      ___       ___       ___                    &kp KP_N0  &kp KP_N0     &kp KP_DOT      &kp KP_ENTER   ___
       >;
